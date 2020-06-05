@@ -9,7 +9,7 @@ FROM zhicwu/java:8
 MAINTAINER Zhichun Wu <zhicwu@gmail.com>
 
 # Set Environment Variables
-ENV PDI_VERSION=7.1 PDI_BUILD=7.1.0.0-12 PDI_PATCH=7.1.0.0 PDI_USER=pentaho \
+ENV PDI_VERSION=9.1 PDI_BUILD=9.0.0.0-423 PDI_PATCH=9.0.0.0 PDI_USER=pentaho \
 	KETTLE_HOME=/data-integration POSTGRESQL_DRIVER_VERSION=42.1.1 \
 	MYSQL_DRIVER_VERSION=5.1.42 JTDS_VERSION=1.3.1 CASSANDRA_DRIVER_VERSION=0.6.3 \
 	H2DB_VERSION=1.4.196 HSQLDB_VERSION=2.4.0
@@ -24,7 +24,7 @@ RUN apt-get update \
 	&& useradd -md $KETTLE_HOME -s /bin/bash $PDI_USER
 
 # Download Pentaho Data Integration Community Edition and Unpack
-RUN wget --progress=dot:giga http://downloads.sourceforge.net/project/pentaho/Data%20Integration/${PDI_VERSION}/pdi-ce-${PDI_BUILD}.zip \
+RUN wget --progress=dot:giga http://downloads.sourceforge.net/project/pentaho/Pentaho%20${PDI_VERSION}/client-tools/pdi-ce-${PDI_BUILD}.zip \
 	&& unzip -q *.zip \
 	&& rm -f *.zip
 
